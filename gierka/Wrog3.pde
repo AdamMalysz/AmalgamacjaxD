@@ -12,4 +12,10 @@ class Wrog3{
   void idzie(){
     y=y+4; 
   }
+  int getKoordyX(){
+    return x;
+  }
+  int getKoordyY(){
+    return y;
+  }
 }

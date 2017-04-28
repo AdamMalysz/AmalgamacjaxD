@@ -34,6 +34,7 @@ void rysuj(){
     przesunPociski();
     rysujPociski();
     aktualizujCooldowny();
+    sprawdzKolizje();
     if(mousePressed && cooldownBroni<0){
       Pocisk numerPocisku = new Pocisk(mouseX, mouseY);
       pociski.add(numerPocisku);
@@ -50,6 +51,13 @@ void rysuj(){
   
 }
 
+void sprawdzKolizje(){
+  for(Pocisk numerPocisku : pociski){ 
+    if(!numerPocisku.trafiony){
+    numerPocisku.sprawdzKolizje();       
+    }
+  }
+}
 void przesunPociski(){
   for(Pocisk numerPocisku : pociski){
     numerPocisku.przesun();
@@ -57,7 +65,9 @@ void przesunPociski(){
 }
 void rysujPociski(){
   for (Pocisk numerPocisku : pociski){
+    if(!numerPocisku.trafiony){
     numerPocisku.rysuj();
+    }
   }
 }
 void rysujWybuchy(){

@@ -12,7 +12,7 @@ class Wrog1{
   }
   void rysuj(){
     image(wrog1,skad[los],y,64,64);
-    println(skad[los],y);
+    //println(skad[los],y);
   }
   void idzie(){ //z lewej
     if(los==1){
@@ -39,5 +39,11 @@ class Wrog1{
         if(skad[los]>750){strona=false;}
       }
     }
+  }
+  int getKoordyX(){
+    return skad[los];
+  }
+  int getKoordyY(){
+    return y;
   }
 }

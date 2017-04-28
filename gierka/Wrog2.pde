@@ -30,4 +30,10 @@ class Wrog2{
       else if(y<700&&skad[los]==450){y++;}
     }
   }
+  int getKoordyX(){
+    return skad[los];
+  }
+  int getKoordyY(){
+    return y;
+  }
 }
