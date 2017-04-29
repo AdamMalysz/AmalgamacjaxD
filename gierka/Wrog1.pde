@@ -13,6 +13,9 @@ class Wrog1{
   void rysuj(){
     image(wrog1,skad[los],y,64,64);
     //println(skad[los],y);
+    if(y>672){
+      y = -80;
+    }
   }
   void idzie(){ //z lewej
     if(los==1){

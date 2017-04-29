@@ -26,6 +26,7 @@ Gra(){
 }
 void rysuj(){
   gracz.miganie(cooldownMigania);
+  sprawdzKolizjeZGraczem();
   background(tlo);
   rysujWybuchy();
   if(iloscHP>0){
@@ -34,11 +35,11 @@ void rysuj(){
     przesunPociski();
     rysujPociski();
     aktualizujCooldowny();
-    sprawdzKolizje();
+    sprawdzKolizjeZWrogami();
     if(mousePressed && cooldownBroni<0){
       Pocisk numerPocisku = new Pocisk(mouseX, mouseY);
       pociski.add(numerPocisku);
-      cooldownBroni=25;
+      cooldownBroni=50;
       if(pociski.size()>25){
         pociski.remove(0);
       }
@@ -51,10 +52,10 @@ void rysuj(){
   
 }
 
-void sprawdzKolizje(){
+void sprawdzKolizjeZWrogami(){
   for(Pocisk numerPocisku : pociski){ 
     if(!numerPocisku.trafiony){
-    numerPocisku.sprawdzKolizje();       
+    numerPocisku.sprawdzKolizjeZWrogami();       
     }
   }
 }
@@ -82,12 +83,14 @@ void aktualizujCooldowny(){
   punkty++;
 }
 void uderzGracza(){
-  iloscHP--;
-  Wybuch numerWybuchu = new Wybuch(mouseX, mouseY);
-  wybuchy.add(numerWybuchu);
-  wynik.zapisz();
-  tarcza=60;
-  cooldownMigania=60;
+  if(tarcza<=0){
+    iloscHP--;
+    Wybuch numerWybuchu = new Wybuch(mouseX, mouseY);
+    wybuchy.add(numerWybuchu);
+    wynik.zapisz();
+    tarcza=60;
+    cooldownMigania=60;
+  }
 }
 void keyPressed(){ 
   //do testowania przegranej

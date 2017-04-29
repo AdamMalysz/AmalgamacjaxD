@@ -8,6 +8,10 @@ class Wrog3{
   }
   void rysuj(){
     image(wrog3,x,y,64,64);
+    if(y>672){
+      y = -80;
+      x = (int)random(64,600);
+    }
   }
   void idzie(){
     y=y+4; 
