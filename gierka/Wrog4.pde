@@ -1,10 +1,12 @@
 class Wrog4{
   PImage wrog4;
-  int los;
-  int y = -80;
-  int x = (int)random(64,600);
-  Wrog4(){
+  int los,v,px,x,y;
+  int i = 0;
+  Wrog4(int skadX, int szybY, int skadY){
     wrog4 = loadImage("asteroida.png"); 
+    x=skadX;
+    y=skadY;
+    v=szybY;
   }
   void rysuj(){
     image(wrog4,x,y,64,64);
@@ -14,7 +16,7 @@ class Wrog4{
     }
   }
   void idzie(){
-    y++; 
+    y=y+v; 
   }
   int getKoordyX(){
     return x;

@@ -1,10 +1,12 @@
 class Wrog3{
   PImage wrog3;
-  int los;
-  int y = -80;
-  int x = (int)random(64,600);
-  Wrog3(){
+  int los,v,px,x,y;
+  int i = 0;
+  Wrog3(int skadX, int szybY, int skadY){
     wrog3 = loadImage("wrog3.png"); 
+    x=skadX;
+    y=skadY;
+    v=szybY;
   }
   void rysuj(){
     image(wrog3,x,y,64,64);
@@ -14,7 +16,7 @@ class Wrog3{
     }
   }
   void idzie(){
-    y=y+4; 
+    y=y+v; 
   }
   int getKoordyX(){
     return x;

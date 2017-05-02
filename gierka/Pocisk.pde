@@ -13,7 +13,7 @@ class Pocisk{
     y-=15;
   }
   boolean sprawdzKolizjeZWrogami(){ //myśle, że dałoby się to jakoś ładniej zrobić, ale nie mam pomysłu
-    if(wrog1.getKoordyX()>x-32 && wrog1.getKoordyX()<x+32 && 
+    if(wrog1.getKoordyX()>x-32 && wrog1.getKoordyX()<x+32 && // jest to bardzo ładne i ty też jesteś bardzo ładny
     wrog1.getKoordyY()>y-32 && wrog1.getKoordyY()<y+32){
       Wybuch numerWybuchu = new Wybuch(wrog1.getKoordyX(), wrog1.getKoordyY());
       wrog1 = new Wrog1();
@@ -33,7 +33,7 @@ class Pocisk{
     wrog3.getKoordyY()>y-32 && wrog3.getKoordyY()<y+32){
       Wybuch numerWybuchu = new Wybuch(wrog3.getKoordyX(), wrog3.getKoordyY());
       wybuchy.add(numerWybuchu);
-      wrog3 = new Wrog3();
+      wrog3 = new Wrog3(400,5,-80);
       trafiony=true;
       return true;
     }
@@ -41,7 +41,7 @@ class Pocisk{
     wrog4.getKoordyY()>y-32 && wrog4.getKoordyY()<y+32){
       Wybuch numerWybuchu = new Wybuch(wrog4.getKoordyX(), wrog4.getKoordyY());
       wybuchy.add(numerWybuchu);
-      wrog4 = new Wrog4();
+      wrog4 = new Wrog4(400,3,-80);
       trafiony=true;
       return true;
     }

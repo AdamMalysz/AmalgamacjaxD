@@ -19,6 +19,10 @@ Wynik wynik = new Wynik();
 HP hp= new HP();
 ArrayList <Pocisk> pociski;
 ArrayList <Wybuch> wybuchy;
+ArrayList <Wrog1> wrog1Lista = new ArrayList<Wrog1>();
+ArrayList <Wrog2> wrog2Lista = new ArrayList<Wrog2>();
+ArrayList <Wrog3> wrog3Lista = new ArrayList<Wrog3>();
+ArrayList <Wrog4> wrog4Lista = new ArrayList<Wrog4>();
 int[] wszystkieWyniki = new int[6];
 
 
@@ -28,6 +32,7 @@ void setup(){
   size(640,640);
   frameRate(60);
   menu = new Menu();
+  
   nowaGra = new Przycisk();
   rekordy = new Rekordy();
   wyjdz = new Wyjdz();
@@ -35,8 +40,8 @@ void setup(){
   wrogowie = new Wrogowie();
   wrog1 = new Wrog1();
   wrog2 = new Wrog2();
-  wrog3 = new Wrog3();
-  wrog4 = new Wrog4();
+  wrog3 = new Wrog3(400,3,-80);   //zrobiłem żeby dostawali pozycję X i Y i szybkośc Y w konstruktorze
+  wrog4 = new Wrog4(400,3,-80);
   tablicaWynikow = new TablicaWynikow();
   wyjdzR = new WyjdzR();
 }

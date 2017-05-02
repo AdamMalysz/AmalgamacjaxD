@@ -1,14 +1,24 @@
 class Wrog1{
   PImage wrog1;
   int los;
+  int i = 0;
   int y = -80;
   int[] skad = {42,100,500};
   boolean strona=false;
   Wrog1(){
     wrog1 = loadImage("wrog1.png"); 
   }
-  void skadIdzie(int x){
+  void jakDaleko(int py){
+    while (i==0){
+      y=py;
+      i++;
+    } 
+  }
+  void skadIdzie(int x){ //albo z prawej(1) albo z lewej(2)
     los=x; 
+  }
+  void jakSzybko(){
+    
   }
   void rysuj(){
     image(wrog1,skad[los],y,64,64);

@@ -1,12 +1,19 @@
 class Wrog2{
   PImage wrog2;
   int los;
+  int i = 0;
   int y = -80;
   int[] skad = {42,150,450};
   Wrog2(){
     wrog2 = loadImage("mocek.jpg"); 
   }
-  void skadIdzie(int x){
+  void jakDaleko(int py){
+    while (i==0){
+      y=py;
+      i++;
+    } 
+  }
+  void skadIdzie(int x){  //albo z prawej(1) albo z lewej(2)
     los=x; 
   }
   void rysuj(){
@@ -16,20 +23,20 @@ class Wrog2{
     }
     
   }
-  void idzie(){
+  void idzie(int vx, int vy){
     if(los==1){    //tu wychodzi z lewej
-      if(y<200&&skad[los]==150){y++;}
-      else if(y==200&&skad[los]<450){skad[los]++;}
-      else if(y<400&&skad[los]==450){y++;}
-      else if(y==400&&skad[los]>150){skad[los]--;}
-      else if(y<700&&skad[los]==150){y++;}
+      if(y<200&&skad[los]==150){y=y+vy;}
+      else if(y==200&&skad[los]<450){skad[los]=skad[los]+vx;}
+      else if(y<400&&skad[los]==450){y=y+vy;}
+      else if(y==400&&skad[los]>150){skad[los]=skad[los]-vx;}
+      else if(y<700&&skad[los]==150){y=y+vy;}
     }
     if(los==2){    //tu wychodzi z prawej
-      if(y<200&&skad[los]==450){y++;}
-      else if(y==200&&skad[los]>150){skad[los]--;}
-      else if(y<400&&skad[los]==150){y++;}
-      else if(y==400&&skad[los]<450){skad[los]++;}
-      else if(y<700&&skad[los]==450){y++;}
+      if(y<200&&skad[los]==450){y=y+vy;}
+      else if(y==200&&skad[los]>150){skad[los]=skad[los]-vx;}
+      else if(y<400&&skad[los]==150){y=y+vy;}
+      else if(y==400&&skad[los]<450){skad[los]=skad[los]+vx;}
+      else if(y<700&&skad[los]==450){y=y+vy;}
     }
   }
   int getKoordyX(){
