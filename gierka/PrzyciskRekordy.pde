@@ -26,11 +26,3 @@ class Rekordy{
     if(myszkaNa){karta=2;}
   }
 }
-  
-  
-  
-  
-  
-  
-  
-  

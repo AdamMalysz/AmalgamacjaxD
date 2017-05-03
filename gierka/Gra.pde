@@ -24,12 +24,14 @@ Gra(){
   cooldownBroni=25;
   iloscHP=3;
 }
-void rysuj(){
+void rysuj(){   
   gracz.miganie(cooldownMigania);
   sprawdzKolizjeZGraczem();
   background(tlo);
   rysujWybuchy();
   if(iloscHP>0){
+    textSize(16); 
+    text(punkty+" pkt", 550 , 608);
     gracz.rysuj(mouseX,mouseY);
     hp.rysuj();
     przesunPociski();
@@ -80,7 +82,6 @@ void aktualizujCooldowny(){
   cooldownBroni--;
   tarcza--;
   cooldownMigania--;
-  punkty++;
 }
 void uderzGracza(){
   if(tarcza<=0){
