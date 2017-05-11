@@ -7,6 +7,7 @@ Gra(){
   }
   
   statekGracza = loadImage("gracz.png");
+  pociskWrog = loadImage("wrogPocisk.png");
   statekAnimacja[0] =(statekGracza.get(64,0,64,64));
   statekAnimacja[1] =(statekGracza.get(128,0,64,64));
   statekAnimacja[2] =(statekGracza.get(0,0,64,64));

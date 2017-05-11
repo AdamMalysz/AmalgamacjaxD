@@ -10,7 +10,7 @@ Wrog1 wrog1;
 Wrog2 wrog2;
 Wrog3 wrog3;
 Wrog4 wrog4;
-PImage pociskGracza,statekGracza,wybuch,tlo,znaczekHP,licznikHP;
+PImage pociskGracza,statekGracza,wybuch,tlo,znaczekHP,licznikHP,pociskWrog;
 PImage[] wybuchAnimacja = new PImage[3];
 PImage[] statekAnimacja = new PImage[3];
 int cooldownBroni,punkty,animacjaWybuchu,iloscHP,tarcza,cooldownMigania;
@@ -23,6 +23,7 @@ ArrayList <Wrog1> wrog1Lista = new ArrayList<Wrog1>();
 ArrayList <Wrog2> wrog2Lista = new ArrayList<Wrog2>();
 ArrayList <Wrog3> wrog3Lista = new ArrayList<Wrog3>();
 ArrayList <Wrog4> wrog4Lista = new ArrayList<Wrog4>();
+ArrayList <Pocisk> pociskiW = new ArrayList<Pocisk>(); 
 int[] wszystkieWyniki = new int[6];
 
 
@@ -39,9 +40,9 @@ void setup(){
   gra = new Gra();
   wrogowie = new Wrogowie();
   wrog1 = new Wrog1();
-  wrog2 = new Wrog2();
-  wrog3 = new Wrog3(400,3,-80);   //zrobiłem żeby dostawali pozycję X i Y i szybkośc Y w konstruktorze
-  wrog4 = new Wrog4(400,3,-80);
+  wrog2 = new Wrog2(10,-80,1);
+  wrog3 = new Wrog3(400,10,-80);   //zrobiłem żeby dostawali pozycję X i Y i szybkośc Y w konstruktorze
+  wrog4 = new Wrog4(250,6,-80);
   tablicaWynikow = new TablicaWynikow();
   wyjdzR = new WyjdzR();
 }
