@@ -1,20 +1,16 @@
-class Superstrzelanie extends Powerup{
-  void kolizja(){
-    czasTrwania=200;    
-    maxCooldownBroni=5;
+class SuperTarcza extends Powerup{
+  void kolizja(){   
     zebrany = true;
+    tarcza = 300;
+    cooldownMigania = 300;
   }
   void aktualizuj(){
     if(!zebrany){
-      image(superstrzelanieObrazek,x,y);
+      image(tarczaObrazek,x,y);
     if(gracz.getKoordyX()>x-32 && gracz.getKoordyX()<x+32 && 
       gracz.getKoordyY()>y-32 && gracz.getKoordyY()<y+32){  
         kolizja();  
       }
-    }
-    if(czasTrwania<0){
-      maxCooldownBroni=50;     
-    }
-    
+    }    
   }
 }

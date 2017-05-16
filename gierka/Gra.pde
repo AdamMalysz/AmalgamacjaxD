@@ -5,6 +5,7 @@ Gra(){
   for(int i=0;i<=4;i++){
     wszystkieWyniki[i] = int(lista[i]);
   }
+  
   maxCooldownBroni=50;
   statekGracza = loadImage("gracz.png");
   pociskWrog = loadImage("wrogPocisk.png");
@@ -19,6 +20,9 @@ Gra(){
   tlo = loadImage("tlo.png");
   znaczekHP = loadImage("hpZnaczek.png");
   licznikHP = loadImage("hpLicznik.png");
+  superstrzelanieObrazek = loadImage("superstrzelanie.png");
+  leczenieObrazek = loadImage("leczenie.png");
+  tarczaObrazek = loadImage("tarcza.png");
   imageMode(CENTER);
   pociski = new ArrayList();
   wybuchy = new ArrayList();
@@ -30,6 +34,7 @@ void rysuj(){
   sprawdzKolizjeZGraczem();
   background(tlo);
   rysujWybuchy();
+  spawnujPowerupy();
   if(iloscHP>0){
     textSize(16); 
     text(punkty+" pkt", 550 , 608);
@@ -39,14 +44,7 @@ void rysuj(){
     rysujPociski();
     aktualizujCooldowny();
     sprawdzKolizjeZWrogami();
-    if(mousePressed && cooldownBroni<0){
-      Pocisk numerPocisku = new Pocisk(mouseX, mouseY);
-      pociski.add(numerPocisku);
-      cooldownBroni=maxCooldownBroni;
-      if(pociski.size()>25){
-        pociski.remove(0);
-      }
-    }           
+    
   }else{    
     wynik.rysuj();
   }
@@ -55,6 +53,19 @@ void rysuj(){
   
 }
 
+void spawnujPowerupy(){
+  cooldownPowerupow--;
+  if(cooldownPowerupow<0){
+    int wybierz = int(random(1,4));
+    println(wybierz);
+    cooldownPowerupow = int(random(500,501));
+    switch(wybierz){
+      case 1: superstrzelanie.spawnuj(); break;
+      case 2: leczenie.spawnuj(); break;
+      case 3: superTarcza.spawnuj(); break;
+    }
+  }
+}
 void sprawdzKolizjeZWrogami(){
   for(Pocisk numerPocisku : pociski){ 
     if(!numerPocisku.trafiony){
@@ -83,6 +94,12 @@ void aktualizujCooldowny(){
   cooldownBroni--;
   tarcza--;
   cooldownMigania--;
+  superstrzelanie.aktualizuj();
+  superstrzelanie.rysuj();
+  leczenie.aktualizuj();
+  leczenie.rysuj();
+  superTarcza.rysuj();
+  superTarcza.aktualizuj();
 }
 void uderzGracza(){
   if(tarcza<=0){
@@ -95,7 +112,5 @@ void uderzGracza(){
   }
 }
 void keyPressed(){ 
-  //do testowania przegranej
-  superstrzelanie.kolizja();
-  //
+  
 }

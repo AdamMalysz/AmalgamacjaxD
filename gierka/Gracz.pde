@@ -5,8 +5,12 @@ class Gracz{
     miga=false;
   }
   void rysuj(int tx, int ty){
-    x=tx;
+    if(tx>16 && tx<624){
+      x=tx;
+    }
+    if(ty>16&& ty<634){
     y=ty;
+    }
     if(!miga){
         if(x<pmouseX){
           image(statekAnimacja[0],x,y);
@@ -18,9 +22,23 @@ class Gracz{
           image(statekAnimacja[2],x,y);
         }
     }
+    if(mousePressed && cooldownBroni<0){
+      Pocisk numerPocisku = new Pocisk(x, y);
+      pociski.add(numerPocisku);
+      cooldownBroni=maxCooldownBroni;
+      if(pociski.size()>25){
+        pociski.remove(0);
+      }
+    }           
+  }
+  int getKoordyX(){
+    return x;
+  }
+  int getKoordyY(){
+    return y;
   }
   void miganie(int czasMigania){
-    if(czasMigania%10==0 && czasMigania>0)miga=true;
+    if(czasMigania%5==0 && czasMigania>0)miga=true;
     else miga=false;
   }
 }

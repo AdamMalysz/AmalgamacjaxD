@@ -1,11 +1,16 @@
 class Powerup{
-  int x,y;
-  Powerup(){
-    x=int(random(32,608));
-    y=-32;
-  }
-  void spada(){
+  int x,y =700;
+  int czasTrwania;
+  boolean zebrany;
+  
+  void rysuj(){
     y+=5;
+    czasTrwania--;
+  }
+  void spawnuj(){
+    x=int(random(32,608));
+    
+    y=-32;
   }
 }
   
