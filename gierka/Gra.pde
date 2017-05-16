@@ -5,7 +5,7 @@ Gra(){
   for(int i=0;i<=4;i++){
     wszystkieWyniki[i] = int(lista[i]);
   }
-  
+  maxCooldownBroni=50;
   statekGracza = loadImage("gracz.png");
   pociskWrog = loadImage("wrogPocisk.png");
   statekAnimacja[0] =(statekGracza.get(64,0,64,64));
@@ -42,7 +42,7 @@ void rysuj(){
     if(mousePressed && cooldownBroni<0){
       Pocisk numerPocisku = new Pocisk(mouseX, mouseY);
       pociski.add(numerPocisku);
-      cooldownBroni=50;
+      cooldownBroni=maxCooldownBroni;
       if(pociski.size()>25){
         pociski.remove(0);
       }
@@ -96,8 +96,6 @@ void uderzGracza(){
 }
 void keyPressed(){ 
   //do testowania przegranej
-  if(tarcza<=0){
-    uderzGracza();
-  }
+  superstrzelanie.kolizja();
   //
 }
