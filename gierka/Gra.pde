@@ -58,7 +58,7 @@ void spawnujPowerupy(){
   if(cooldownPowerupow<0){
     int wybierz = int(random(1,4));
     println(wybierz);
-    cooldownPowerupow = int(random(500,501));
+    cooldownPowerupow = int(random(500,1000));
     switch(wybierz){
       case 1: superstrzelanie.spawnuj(); break;
       case 2: leczenie.spawnuj(); break;
