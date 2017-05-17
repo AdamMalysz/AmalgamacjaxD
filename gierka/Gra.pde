@@ -25,6 +25,7 @@ Gra(){
   tarczaObrazek = loadImage("tarcza.png");
   imageMode(CENTER);
   pociski = new ArrayList();
+  pociskiW = new ArrayList();
   wybuchy = new ArrayList();
   cooldownBroni=25;
   iloscHP=3;
@@ -49,6 +50,9 @@ void rysuj(){
     wynik.rysuj();
   }
    wrogowie.rysuj();
+   if(pociskiW.size()>100){
+        pociskiW.remove(0);
+    }
 }
   
 }
@@ -77,9 +81,17 @@ void przesunPociski(){
   for(Pocisk numerPocisku : pociski){
     numerPocisku.przesun();
   }
+  for(PociskW numerPocisku : pociskiW){
+    numerPocisku.przesun();
+  }
 }
 void rysujPociski(){
   for (Pocisk numerPocisku : pociski){
+    if(!numerPocisku.trafiony){
+    numerPocisku.rysuj();
+    }
+  }
+  for (PociskW numerPocisku : pociskiW){
     if(!numerPocisku.trafiony){
     numerPocisku.rysuj();
     }

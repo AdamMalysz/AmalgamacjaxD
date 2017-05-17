@@ -1,6 +1,6 @@
 class Wrog2{
   PImage wrog2;
-  int los,v;
+  int los,v,cooldown;
   int i = 0;
   int y = -80;
   int[] skad = {150,450};
@@ -12,9 +12,16 @@ class Wrog2{
   }
   void rysuj(){
     image(wrog2,skad[los],y,64,64);
+    cooldown++;
     if(y>672){
       y = -80;
-      x = (int)random(64,600);
+      x = (int)random(64,600); 
+    }
+    if(cooldown==50){
+      cooldown=0;
+      PociskW numerPocisku = new PociskW(getKoordyX(),getKoordyY());
+      pociskiW.add(numerPocisku);
+      
     }
   }
   void idzie(){

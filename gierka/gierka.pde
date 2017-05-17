@@ -26,7 +26,7 @@ ArrayList <Wrog1> wrog1Lista = new ArrayList<Wrog1>();
 ArrayList <Wrog2> wrog2Lista = new ArrayList<Wrog2>();
 ArrayList <Wrog3> wrog3Lista = new ArrayList<Wrog3>();
 ArrayList <Wrog4> wrog4Lista = new ArrayList<Wrog4>();
-ArrayList <Pocisk> pociskiW = new ArrayList<Pocisk>(); 
+ArrayList <PociskW> pociskiW;
 int[] wszystkieWyniki = new int[6];
 
 
@@ -43,7 +43,7 @@ void setup(){
   gra = new Gra();
   wrogowie = new Wrogowie();
   wrog1 = new Wrog1();
-  wrog2 = new Wrog2(10,-80,1);
+  wrog2 = new Wrog2(2,-80,1);
   wrog3 = new Wrog3(400,10,-80);   //zrobiłem żeby dostawali pozycję X i Y i szybkośc Y w konstruktorze
   wrog4 = new Wrog4(250,6,-80);
   tablicaWynikow = new TablicaWynikow();
