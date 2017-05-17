@@ -9,7 +9,7 @@ class Powerup{
   }
   void spawnuj(){
     x=int(random(32,608));
-    
+    zebrany=false;
     y=-32;
   }
 }
