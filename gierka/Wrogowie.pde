@@ -1,3 +1,4 @@
+
 class Wrogowie {
   int los=(int)random(1,2);  //albo mam idiotyczne szczęście albo losowanie z tylko dwoma zmiennymi nie działa
   

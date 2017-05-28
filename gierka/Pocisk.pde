@@ -12,8 +12,8 @@ class Pocisk{
   void przesun(){
     y-=15;
   }
-  void sprawdzKolizjeZWrogami(){ //myśle, że dałoby się to jakoś ładniej zrobić, ale nie mam pomysłu
-    if(wrog1.getKoordyX()>x-32 && wrog1.getKoordyX()<x+32 && // jest to bardzo ładne i ty też jesteś bardzo ładny
+  void sprawdzKolizjeZWrogami(){ 
+    if(wrog1.getKoordyX()>x-32 && wrog1.getKoordyX()<x+32 && 
     wrog1.getKoordyY()>y-32 && wrog1.getKoordyY()<y+32){
       Wybuch numerWybuchu = new Wybuch(wrog1.getKoordyX(), wrog1.getKoordyY());
       wrog1 = new Wrog1();

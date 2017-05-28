@@ -1,8 +1,8 @@
 Menu menu;
 Przycisk nowaGra;
-Rekordy rekordy;
-Wyjdz wyjdz;
-WyjdzR wyjdzR;
+Przycisk rekordy;
+Przycisk wyjdz;
+Przycisk wyjdzR;
 Gra gra;
 Wrogowie wrogowie;
 TablicaWynikow tablicaWynikow;
@@ -13,7 +13,7 @@ Wrog4 wrog4;
 PImage pociskGracza,statekGracza,wybuch,tlo,znaczekHP,licznikHP,pociskWrog,nowyPowerup,superstrzelanieObrazek,leczenieObrazek,tarczaObrazek;
 PImage[] wybuchAnimacja = new PImage[3];
 PImage[] statekAnimacja = new PImage[3];
-int cooldownBroni,punkty,animacjaWybuchu,iloscHP,tarcza,cooldownMigania,maxCooldownBroni,cooldownPowerupow;
+int cooldownBroni,punkty,animacjaWybuchu,iloscHP,tarcza,maxCooldownBroni,cooldownPowerupow;
 Gracz gracz = new Gracz();
 Wynik wynik = new Wynik();
 Superstrzelanie superstrzelanie = new Superstrzelanie(); 
@@ -22,10 +22,12 @@ SuperTarcza superTarcza = new SuperTarcza();
 HP hp= new HP();
 ArrayList <Pocisk> pociski;
 ArrayList <Wybuch> wybuchy;
+
 ArrayList <Wrog1> wrog1Lista = new ArrayList<Wrog1>();
 ArrayList <Wrog2> wrog2Lista = new ArrayList<Wrog2>();
 ArrayList <Wrog3> wrog3Lista = new ArrayList<Wrog3>();
 ArrayList <Wrog4> wrog4Lista = new ArrayList<Wrog4>();
+
 ArrayList <PociskW> pociskiW;
 int[] wszystkieWyniki = new int[6];
 
@@ -37,9 +39,6 @@ void setup(){
   frameRate(60);
   menu = new Menu();
   
-  nowaGra = new Przycisk();
-  rekordy = new Rekordy();
-  wyjdz = new Wyjdz();
   gra = new Gra();
   wrogowie = new Wrogowie();
   wrog1 = new Wrog1();
@@ -47,10 +46,11 @@ void setup(){
   wrog3 = new Wrog3(400,10,-80);   //zrobiłem żeby dostawali pozycję X i Y i szybkośc Y w konstruktorze
   wrog4 = new Wrog4(250,6,-80);
   tablicaWynikow = new TablicaWynikow();
-  wyjdzR = new WyjdzR();
+  wyjdzR = new Przycisk(4,450,500);
 }
 void draw(){
   
+  //Sprawdza czy wyświetlać menu, czy grę
   if(karta==0){
     menu.rysuj();
     nowaGra.myszkaNad(mouseX,mouseY);
@@ -71,7 +71,9 @@ void draw(){
   }  
 }
 void mousePressed(){
-  if(karta==0){ //nie chce mi sie sprawdzac czy ten "if" potrzebny
+  
+  //Sprawdza kliknięcie na przyciski
+  if(karta==0){ 
     nowaGra.czyWcisnety();
     rekordy.czyWcisnety();
     wyjdz.czyWcisnety();

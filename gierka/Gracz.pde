@@ -38,7 +38,7 @@ class Gracz{
     return y;
   }
   void miganie(int czasMigania){
-    if(czasMigania%5==0 && czasMigania>0)miga=true;
+    if(czasMigania%3==0 && czasMigania>0)miga=true;
     else miga=false;
   }
 }

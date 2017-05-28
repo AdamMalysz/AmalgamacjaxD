@@ -2,7 +2,7 @@ class SuperTarcza extends Powerup{
   void kolizja(){   
     zebrany = true;
     tarcza = 300;
-    cooldownMigania = 300;
+    tarcza = 300;
   }
   void aktualizuj(){
     if(!zebrany){
