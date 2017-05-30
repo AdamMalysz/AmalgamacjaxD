@@ -1,6 +1,6 @@
 class Przycisk{
   PImage obrazek, obrazek2;
-  int x,y,rodzaj;
+  private int x,y,rodzaj;
   private boolean myszkaNa;
   Przycisk(int tz,int tx,int ty){
     x=tx;

@@ -1,5 +1,5 @@
-boolean miga;
-int x,y;
+private boolean miga;
+private int x,y;
 class Gracz{  
   Gracz(){
     miga=false;
@@ -58,6 +58,9 @@ void sprawdzKolizjeZGraczem(){
     else if(wrog4.getKoordyX()>x-32 && wrog4.getKoordyX()<x+32 && 
     wrog4.getKoordyY()>y-32 && wrog4.getKoordyY()<y+32){
       uderzGracza();
-
+    }
+    else if(wrog4.getKoordyX()>x-32 && wrog4.getKoordyX()<x+32 && 
+    wrog4.getKoordyY()>y-32 && wrog4.getKoordyY()<y+32){
+      uderzGracza();
     }
   }

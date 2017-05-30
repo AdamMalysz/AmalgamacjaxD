@@ -5,7 +5,6 @@ Gra(){
   for(int i=0;i<=4;i++){
     wszystkieWyniki[i] = int(lista[i]);
   }
-  
   maxCooldownBroni=50;
   statekGracza = loadImage("gracz.png");
   pociskWrog = loadImage("wrogPocisk.png");
@@ -31,7 +30,8 @@ Gra(){
   iloscHP=3;
 }
 void rysuj(){   
-  background(tlo);
+  background(1);
+  tloGra.rysuj();
   gracz.miganie(tarcza);
   sprawdzKolizjeZGraczem();
   rysujWybuchy();

@@ -1,62 +1,51 @@
-class Wrog1{
+class Wrog1 extends Wrog{
   PImage wrog1;
-  int los;
-  int i = 0;
-  int y = -80;
-  int[] skad = {42,100,500};
-  boolean strona=false;
-  Wrog1(){
-    wrog1 = loadImage("wrog1.png"); 
-  }
-  void jakDaleko(int py){
-    while (i==0){
-      y=py;
-      i++;
-    } 
-  }
-  void skadIdzie(int x){ //albo z prawej(1) albo z lewej(2)
-    los=x; 
-  }
-  void jakSzybko(){
-    
-  }
+  private int cooldown=0,losB=(int)random(2);
+  private boolean gdzie;
+  Wrog1(int wx, int wy, int swy){
+    super(wx,wy,swy);
+    wrog1 = loadImage("wrog1.png");
+  } 
   void rysuj(){
-    image(wrog1,skad[los],y,64,64);
-    //println(skad[los],y);
-    if(y>672){
-      y = -80;
+    image(wrog1,wrogX,wrogY);
+    
+    if(wrogY>672){
+      wrogY = -80;
+      wrogX = (int)random(64,600);
+      losB=(int)random(2);
+    }
+    if (cooldown==50) {
+      cooldown=0;
+      PociskW numerPocisku = new PociskW(wrogX, wrogY); //nie pamiętam jak zrobić żeby strzelali
+      pociskiW.add(numerPocisku);
     }
   }
-  void idzie(){ //z lewej
-    if(los==1){
-      if(y+skad[los]<750&&strona==false){
-        skad[los]++;
-        y++;
-        if(skad[los]+y>=750){strona=true;}
+  void idzie(){
+    if(losB==0){  //tu idzie z prawej
+      if(!gdzie&&wrogX<600){
+        wrogX++;
+        wrogY++;
+        gdzie=false;
       }
-      if(y+skad[los]>250&&strona==true){
-        skad[los]--;
-        y++;
-        if(skad[los]+y<250){strona=false;}
+      else{gdzie=true;}
+      if(gdzie&&wrogX>40){
+        wrogX--;
+        wrogY++;
       }
+      else{gdzie=false;}
+   }
+    if(losB==1){  //tu idzie z lewej
+      if(!gdzie&&wrogX>40){
+        wrogX--;
+        wrogY++;
+        gdzie=false;
+      }
+      else{gdzie=true;}
+      if(gdzie&&wrogX<600){
+        wrogX++;
+        wrogY++;
+      }
+      else{gdzie=false;}
     }
-    if(los==2){ //z prawej
-      if(skad[los]>150&&strona==false){
-        skad[los]--;
-        y++;
-        if(skad[los]<=150){strona=true;}   // nie dotykaj (it just works)
-      }
-      if(skad[los]<750&&strona==true){
-        skad[los]++;
-        y++;
-        if(skad[los]>750){strona=false;}
-      }
-    }
-  }
-  int getKoordyX(){
-    return skad[los];
-  }
-  int getKoordyY(){
-    return y;
   }
 }
