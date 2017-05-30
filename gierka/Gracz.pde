@@ -1,5 +1,5 @@
-boolean miga;
-int x,y;
+private boolean miga;
+private int x,y;
 class Gracz{  
   Gracz(){
     miga=false;

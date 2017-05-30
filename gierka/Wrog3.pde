@@ -1,27 +1,17 @@
-class Wrog3{
+class Wrog3 extends Wrog{
   PImage wrog3;
-  int los,v,px,x,y;
-  int i = 0;
-  Wrog3(int skadX, int szybY, int skadY){
-    wrog3 = loadImage("wrog3.png"); 
-    x=skadX;
-    y=skadY;
-    v=szybY;
-  }
+  Wrog3(int wx, int wy, int swy){
+    super(wx,wy,swy);
+    wrog3 = loadImage("wrog3.png");
+  } 
   void rysuj(){
-    image(wrog3,x,y,64,64);
-    if(y>672){
-      y = -80;
-      x = (int)random(64,600);
+    image(wrog3,wrogX,wrogY);
+    if(wrogY>672){
+      wrogY = -80;
+      wrogX = (int)random(64,600);
     }
   }
   void idzie(){
-    y=y+v; 
-  }
-  int getKoordyX(){
-    return x;
-  }
-  int getKoordyY(){
-    return y;
+    wrogY=wrogY+v; 
   }
 }

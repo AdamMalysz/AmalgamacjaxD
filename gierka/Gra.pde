@@ -31,7 +31,7 @@ Gra(){
   iloscHP=3;
 }
 void rysuj(){   
-  background(tlo);
+  tloGra.rysuj();
   gracz.miganie(tarcza);
   sprawdzKolizjeZGraczem();
   rysujWybuchy();

@@ -1,6 +1,6 @@
 class PociskW{
-  int x;
-  int y;
+  private int x;
+  private int y;
   boolean trafiony;
   PociskW(int tx, int ty){
     x=tx;

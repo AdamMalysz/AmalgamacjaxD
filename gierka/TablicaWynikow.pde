@@ -1,5 +1,5 @@
 class TablicaWynikow{
-int[] wyniki = int(loadStrings("wyniki.txt"));
+private int[] wyniki = int(loadStrings("wyniki.txt"));
 PImage tlo;
 TablicaWynikow(){
   tlo = loadImage("tlo.png");
