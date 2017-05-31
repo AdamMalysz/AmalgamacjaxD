@@ -19,11 +19,6 @@ class PociskW{
   int getKoordyY(){   
     return y; 
   }
-  //else if(x>x-32 && x<x+32 && y>y-32 && y<y+32){
-  //   Wybuch numerWybuchu = new Wybuch(gracz.getKoordyX(), gracz.getKoordyY());    //miałem oczywiście to zbugowane, zobacz czy u ciebie to będzie działało (kolizja wrogiego pocisku z graczem)
-  //   wybuchy.add(numerWybuchu);
-  //    uderzGracza();
-  //  }
   void sprawdzKolizjeZGraczem(){ 
     if(gracz.getKoordyX()>x-32 && gracz.getKoordyX()<x+32 && 
     gracz.getKoordyY()>y-32 && gracz.getKoordyY()<y+32){  

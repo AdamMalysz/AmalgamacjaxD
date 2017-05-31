@@ -1,5 +1,5 @@
 class Wrogowie {
-  void rysuj(){
+  void rysuj() {
     wrog1.rysuj();
     wrog1.idzie();
     wrog2.rysuj();
@@ -15,9 +15,4 @@ class Wrogowie {
     asteroida2.rysuj();
     asteroida2.idzie();
   }
-  //void formacja1(){
-  //  Wrog3 wrog3X = new Wrog3(400,5,-80);   //będę jeszcze z tym kombinował
-  //  wrog3Lista.add(wrog3X);
-  //}
-  
 }

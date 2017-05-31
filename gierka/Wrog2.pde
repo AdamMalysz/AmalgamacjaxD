@@ -1,6 +1,6 @@
 class Wrog2 extends Wrog {
   PImage wrog2;
-  private int v,cooldown,losB=(int)random(2);
+  private int v, cooldown, losB=(int)random(2);
   boolean gdzie;
   Wrog2(int wx, int wy, int woy) {
     super(wx, wy, woy);
@@ -9,10 +9,10 @@ class Wrog2 extends Wrog {
   void rysuj() {
     image(wrog2, wrogX, wrogY, 64, 64);
     cooldown++;
-    println(wrogX,wrogY,gdzie);
-    if(wrogY>672){
+    println(wrogX, wrogY, gdzie);
+    if (wrogY>672) {
       wrogY = -80;
-      wrogX = (int)random(64,600);
+      wrogX = (int)random(64, 600);
     }
     if (cooldown==50) {
       cooldown=0;
@@ -20,61 +20,37 @@ class Wrog2 extends Wrog {
       pociskiW.add(numerPocisku);
     }
   }
-  /*void idzie() {
-    if (gdzie==0) {    //tu wychodzi z lewej
-      if (wrogY<200&&wrogX==150) {
-        wrogY=wrogY+v;
-      } else if (wrogY==200&&wrogX<450) {
-        wrogX=wrogX+2+v;
-      } else if (wrogY<400&&wrogX==450) {
-        wrogY=wrogY+v;
-      } else if (wrogY==400&&wrogX>150) {
-        wrogX=wrogX-2-v;
-      } else if (wrogY<700&&wrogX==150) {
-        wrogY=wrogY+v;
-      }
-    }
-    if (gdzie==1) {    //tu wychodzi z prawej
-      if (wrogY<200&&wrogX==450) {
-        wrogY=wrogY+v;
-      } else if (wrogY==200&&wrogX>150) {
-        wrogX=wrogX-v;
-      } else if (wrogY<400&&wrogX==150) {
-        wrogY=wrogY+v;
-      } else if (wrogY==400&&wrogX<450) {
-        wrogX=wrogX+v;
-      } else if (wrogY<700&&wrogX==450) {
-        wrogY=wrogY+v;
-      }
-    }
-  }*/
-  void idzie(){
+  void idzie() {
     println(gdzie);
-      if(losB==0){  //tu idzie z prawej
-      if(!gdzie&&wrogX<420){
+    if (losB==0) {  //tu idzie z prawej
+      if (!gdzie&&wrogX<420) {
         wrogX++;
         wrogY++;
         gdzie=false;
+      } else {
+        gdzie=true;
       }
-      else{gdzie=true;}
-      if(gdzie&&wrogX>240){
+      if (gdzie&&wrogX>240) {
         wrogX--;
         wrogY++;
-      }
-      else{gdzie=false;}
-   }
-    if(losB==1){  //tu idzie z lewej
-      if(!gdzie&&wrogX>240){
-        wrogX--;
-        wrogY++;
+      } else {
         gdzie=false;
       }
-      else{gdzie=true;}
-      if(gdzie&&wrogX<420){
-        wrogX++;
-        wrogY++;
-      }
-      else{gdzie=false;}
     }
-    }  
+    if (losB==1) {  //tu idzie z lewej
+      if (!gdzie&&wrogX>240) {
+        wrogX--;
+        wrogY++;
+        gdzie=false;
+      } else {
+        gdzie=true;
+      }
+      if (gdzie&&wrogX<420) {
+        wrogX++;
+        wrogY++;
+      } else {
+        gdzie=false;
+      }
+    }
+  }
 }
