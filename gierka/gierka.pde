@@ -10,7 +10,7 @@ PImage pociskGracza,statekGracza,wybuch,tlo,znaczekHP,licznikHP,pociskWrog,nowyP
 PImage[] wybuchAnimacja = new PImage[3];
 PImage[] statekAnimacja = new PImage[3];
 PImage[] animacjaTla = new PImage[2];
-int cooldownBroni,punkty,animacjaWybuchu,iloscHP,tarcza,maxCooldownBroni,cooldownPowerupow,next,losG,losB;
+int cooldownBroni,punkty,animacjaWybuchu,iloscHP,tarcza,maxCooldownBroni,cooldownPowerupow =1000,next,losG,losB;
 Gracz gracz = new Gracz();
 Wynik wynik = new Wynik();
 Superstrzelanie superstrzelanie = new Superstrzelanie(); 
@@ -32,10 +32,7 @@ Wrog4 wrog4;
 Tlo tloGra;
 public int karta = 0;
 void setup(){
-  wrog1 = new Wrog1(300,6,-80);
-  wrog2 = new Wrog2(losowanieWrog2(),9,-80);
-  wrog3 = new Wrog3(199,12,-80);   //arg1 = pozycja X  arg2 = szybkość Y  arg3 = pozycja Y
-  wrog4 = new Wrog4(600,3,-80); 
+  
   tloGra = new Tlo(1);
   size(640,640);
   frameRate(60);
@@ -56,6 +53,7 @@ void draw(){
     cursor(ARROW);
   }
   else if(karta==1){
+
     gra.rysuj();
     
     noCursor();
@@ -84,6 +82,13 @@ public int losowanieWrog2(){  //losuje albo 150 albo 400 (specialnie dla wroga2)
   losG=(int)random(2);      
   if(losG==0){return 150;}
   else{return 450;}
+}
+public void nowaGra(){
+  wrog1 = new Wrog1(300,6,-400);
+  wrog2 = new Wrog2(losowanieWrog2(),9,-560);
+  wrog3 = new Wrog3(199,12,-680);   //arg1 = pozycja X  arg2 = szybkość Y  arg3 = pozycja Y
+  wrog4 = new Wrog4(600,3,-580); 
+  gra = new Gra();
 }
 
 

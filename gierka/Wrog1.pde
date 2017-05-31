@@ -7,6 +7,7 @@ class Wrog1 extends Wrog{
     wrog1 = loadImage("wrog1.png");
   } 
   void rysuj(){
+    cooldown++;
     image(wrog1,wrogX,wrogY);
     
     if(wrogY>672){

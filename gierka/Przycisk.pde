@@ -31,7 +31,7 @@ class Przycisk{
   }
   void czyWcisnety(){
      switch(rodzaj){
-      case 1: if(myszkaNa)karta=1; break;
+      case 1: if(myszkaNa)karta=1; nowaGra(); break;
       case 2: if(myszkaNa)karta=2; break;
       case 3: if(myszkaNa)karta=3; break;
       case 4: if(myszkaNa)karta=0; break;

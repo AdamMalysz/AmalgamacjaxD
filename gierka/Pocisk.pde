@@ -41,9 +41,9 @@ class Pocisk{
     wrog4.getKoordyY()>y-32 && wrog4.getKoordyY()<y+32){
       Wybuch numerWybuchu = new Wybuch(wrog4.getKoordyX(), wrog4.getKoordyY());
       wybuchy.add(numerWybuchu);
-      wrog4 = new Wrog4((int)random(50,600),3,-80);
+     // wrog4 = new Wrog4((int)random(50,600),3,-80);
       trafiony=true;
-      punkty+=10;
+     // punkty+=10;
     }
   }
 }

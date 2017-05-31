@@ -5,6 +5,8 @@ Gra(){
   for(int i=0;i<=4;i++){
     wszystkieWyniki[i] = int(lista[i]);
   }
+  punkty=0;
+  tarcza=0;
   maxCooldownBroni=50;
   statekGracza = loadImage("gracz.png");
   pociskWrog = loadImage("wrogPocisk.png");
@@ -48,6 +50,9 @@ void rysuj(){
     
   }else{    
     wynik.rysuj();
+    if(keyPressed){
+      karta=0;
+    }
   }
   //Usuwa pociski i wybuchy jeśli zrobi się ich za dużo
    wrogowie.rysuj();

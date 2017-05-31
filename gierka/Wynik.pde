@@ -5,6 +5,8 @@ class Wynik{
     if(punkty>wszystkieWyniki[4]){
     text("Rekord!", 10 , 60);
     }
+    textSize(20);
+    text("Naciśnij dowolny klawisz by wrócić do menu", 10, 600);
   }
   void zapisz(){    
     wszystkieWyniki[5] = punkty;

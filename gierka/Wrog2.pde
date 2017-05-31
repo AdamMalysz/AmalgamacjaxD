@@ -21,7 +21,7 @@ class Wrog2 extends Wrog {
       pociskiW.add(numerPocisku);
     }
   }
-  void idzie() {
+  /*void idzie() {
     if (gdzie==0) {    //tu wychodzi z lewej
       if (wrogY<200&&wrogX==150) {
         wrogY=wrogY+v;
@@ -47,6 +47,17 @@ class Wrog2 extends Wrog {
       } else if (wrogY<700&&wrogX==450) {
         wrogY=wrogY+v;
       }
+    }
+  }*/
+  void idzie(){
+    println(gdzie);
+    if (gdzie==0){
+      wrogY++;
+      if(wrogY>300){
+        wrogX++; 
+      }
+    }else{
+      
     }
   }
 }
