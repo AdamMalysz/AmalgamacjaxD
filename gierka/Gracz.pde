@@ -59,8 +59,16 @@ void sprawdzKolizjeZGraczem(){
     wrog4.getKoordyY()>y-32 && wrog4.getKoordyY()<y+32){
       uderzGracza();
     }
-    else if(wrog4.getKoordyX()>x-32 && wrog4.getKoordyX()<x+32 && 
-    wrog4.getKoordyY()>y-32 && wrog4.getKoordyY()<y+32){
+    else if(asteroida1.getKoordyX()>x-32 && asteroida1.getKoordyX()<x+32 && 
+    asteroida1.getKoordyY()>y-32 && asteroida1.getKoordyY()<y+32){
+      uderzGracza();
+    }
+    else if(asteroida2.getKoordyX()>x-32 && asteroida2.getKoordyX()<x+32 && 
+    asteroida2.getKoordyY()>y-32 && asteroida2.getKoordyY()<y+32){
+      uderzGracza();
+    }
+    else if(wrog5.getKoordyX()>x-32 && wrog5.getKoordyX()<x+32 && 
+    wrog5.getKoordyY()>y-32 && wrog5.getKoordyY()<y+32){
       uderzGracza();
     }
   }

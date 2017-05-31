@@ -45,5 +45,25 @@ class Pocisk{
       trafiony=true;
      // punkty+=10;
     }
+    else if(asteroida1.getKoordyX()>x-32 && asteroida1.getKoordyX()<x+32 && 
+    asteroida1.getKoordyY()>y-32 && asteroida1.getKoordyY()<y+32){
+      Wybuch numerWybuchu = new Wybuch(asteroida1.getKoordyX(), asteroida1.getKoordyY());
+      wybuchy.add(numerWybuchu);
+      trafiony=true;
+    }
+    else if(asteroida2.getKoordyX()>x-32 && asteroida2.getKoordyX()<x+32 && 
+    asteroida2.getKoordyY()>y-32 && asteroida2.getKoordyY()<y+32){
+      Wybuch numerWybuchu = new Wybuch(asteroida2.getKoordyX(), asteroida2.getKoordyY());
+      wybuchy.add(numerWybuchu);
+      trafiony=true;
+    }
+    else if(wrog5.getKoordyX()>x-32 && wrog5.getKoordyX()<x+32 && 
+    wrog5.getKoordyY()>y-32 && wrog5.getKoordyY()<y+32){
+      Wybuch numerWybuchu = new Wybuch(wrog5.getKoordyX(), wrog5.getKoordyY());
+      wybuchy.add(numerWybuchu);
+      wrog5 = new Wrog5(-640,10,-640);
+      trafiony=true;
+      punkty+=125;
+    }
   }
 }

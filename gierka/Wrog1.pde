@@ -24,27 +24,27 @@ class Wrog1 extends Wrog{
   void idzie(){
     if(losB==0){  //tu idzie z prawej
       if(!gdzie&&wrogX<600){
-        wrogX++;
-        wrogY++;
+        wrogX=wrogX+2;
+        wrogY=wrogY+2;
         gdzie=false;
       }
       else{gdzie=true;}
       if(gdzie&&wrogX>40){
-        wrogX--;
-        wrogY++;
+        wrogX=wrogX-2;
+        wrogY=wrogY+2;
       }
       else{gdzie=false;}
    }
     if(losB==1){  //tu idzie z lewej
       if(!gdzie&&wrogX>40){
-        wrogX--;
-        wrogY++;
+        wrogX=wrogX-2;
+        wrogY=wrogY+2;
         gdzie=false;
       }
       else{gdzie=true;}
       if(gdzie&&wrogX<600){
-        wrogX++;
-        wrogY++;
+        wrogX=wrogX+2;
+        wrogY=wrogY+2;
       }
       else{gdzie=false;}
     }

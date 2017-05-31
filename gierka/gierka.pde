@@ -19,20 +19,16 @@ SuperTarcza superTarcza = new SuperTarcza();
 HP hp= new HP();
 ArrayList <Pocisk> pociski;
 ArrayList <Wybuch> wybuchy;
-ArrayList <Wrog1> wrog1Lista = new ArrayList<Wrog1>();
-ArrayList <Wrog2> wrog2Lista = new ArrayList<Wrog2>();
-ArrayList <Wrog3> wrog3Lista = new ArrayList<Wrog3>();
-ArrayList <Wrog4> wrog4Lista = new ArrayList<Wrog4>();
 ArrayList <PociskW> pociskiW;
 int[] wszystkieWyniki = new int[6];
 Wrog1 wrog1;
 Wrog2 wrog2;
 Wrog3 wrog3;
-Wrog4 wrog4;
+Wrog4 wrog4,asteroida1,asteroida2;
+Wrog5 wrog5;
 Tlo tloGra;
 public int karta = 0;
 void setup(){
-  
   tloGra = new Tlo(1);
   size(640,640);
   frameRate(60);
@@ -87,7 +83,10 @@ public void nowaGra(){
   wrog1 = new Wrog1(300,6,-400);
   wrog2 = new Wrog2(losowanieWrog2(),9,-560);
   wrog3 = new Wrog3(199,12,-680);   //arg1 = pozycja X  arg2 = szybkość Y  arg3 = pozycja Y
-  wrog4 = new Wrog4(600,3,-580); 
+  wrog4 = new Wrog4(600,3,-790); 
+  asteroida1 = new Wrog4(200,3,-580); 
+  asteroida2 = new Wrog4(400,3,-1080);
+  wrog5 = new Wrog5(-640,10,-640);
   gra = new Gra();
 }
 

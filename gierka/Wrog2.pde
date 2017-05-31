@@ -1,7 +1,7 @@
 class Wrog2 extends Wrog {
   PImage wrog2;
-  private int v,cooldown,gdzie=(int)random(2);
-  private boolean los;
+  private int v,cooldown,losB=(int)random(2);
+  boolean gdzie;
   Wrog2(int wx, int wy, int woy) {
     super(wx, wy, woy);
     wrog2 = loadImage("wrog2.png");
@@ -13,7 +13,6 @@ class Wrog2 extends Wrog {
     if(wrogY>672){
       wrogY = -80;
       wrogX = (int)random(64,600);
-      gdzie=(int)random(2);
     }
     if (cooldown==50) {
       cooldown=0;
@@ -51,13 +50,31 @@ class Wrog2 extends Wrog {
   }*/
   void idzie(){
     println(gdzie);
-    if (gdzie==0){
-      wrogY++;
-      if(wrogY>300){
-        wrogX++; 
+      if(losB==0){  //tu idzie z prawej
+      if(!gdzie&&wrogX<420){
+        wrogX++;
+        wrogY++;
+        gdzie=false;
       }
-    }else{
-      
+      else{gdzie=true;}
+      if(gdzie&&wrogX>240){
+        wrogX--;
+        wrogY++;
+      }
+      else{gdzie=false;}
+   }
+    if(losB==1){  //tu idzie z lewej
+      if(!gdzie&&wrogX>240){
+        wrogX--;
+        wrogY++;
+        gdzie=false;
+      }
+      else{gdzie=true;}
+      if(gdzie&&wrogX<420){
+        wrogX++;
+        wrogY++;
+      }
+      else{gdzie=false;}
     }
-  }
+    }  
 }
