@@ -4,6 +4,7 @@ class TablicaWynikow {
   TablicaWynikow() {
     tlo = loadImage("tlo.png");
     wyniki=reverse(sort(wyniki));
+    wynik.zapisz();
   }
   void rysuj() {
     background(tlo);

@@ -29,6 +29,7 @@ Wrog5 wrog5;
 Tlo tloGra;
 public int karta = 0;
 void setup() {
+  ladujObrazy();
   tloGra = new Tlo(1);
   size(640, 640);
   frameRate(60);
@@ -87,4 +88,16 @@ public void nowaGra() {
   asteroida2 = new Wrog4(400, 3, -1080);
   wrog5 = new Wrog5(-640, 10, -640);
   gra = new Gra();
+}
+public void ladujObrazy(){
+  statekGracza = loadImage("gracz.png");
+  pociskWrog = loadImage("wrogPocisk.png");
+  wybuch = loadImage("wybuch.png");
+  pociskGracza = loadImage("graczPocisk.png"); 
+  tlo = loadImage("tlo.png");
+  znaczekHP = loadImage("hpZnaczek.png");
+  licznikHP = loadImage("hpLicznik.png");
+  superstrzelanieObrazek = loadImage("superstrzelanie.png");
+  leczenieObrazek = loadImage("leczenie.png");
+  tarczaObrazek = loadImage("tarcza.png");
 }

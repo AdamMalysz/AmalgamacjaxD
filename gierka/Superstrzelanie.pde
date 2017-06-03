@@ -5,7 +5,7 @@ class Superstrzelanie extends Powerup {
     zebrany = true;
   }
   void aktualizuj() {
-    if (!zebrany) {
+    if (!zebrany && iloscHP>0) {
       image(superstrzelanieObrazek, x, y);
       if (gracz.getKoordyX()>x-32 && gracz.getKoordyX()<x+32 && 
         gracz.getKoordyY()>y-32 && gracz.getKoordyY()<y+32) {  

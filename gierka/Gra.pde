@@ -1,5 +1,5 @@
 class Gra {
-  PImage tlo;
+  
   Gra() {
     String[] lista = (loadStrings("wyniki.txt"));
     for (int i=0; i<=4; i++) {
@@ -8,22 +8,17 @@ class Gra {
     punkty=0;
     tarcza=0;
     maxCooldownBroni=50;
-    statekGracza = loadImage("gracz.png");
-    pociskWrog = loadImage("wrogPocisk.png");
+    
+    
     statekAnimacja[0] =(statekGracza.get(64, 0, 64, 64));
     statekAnimacja[1] =(statekGracza.get(128, 0, 64, 64));
     statekAnimacja[2] =(statekGracza.get(0, 0, 64, 64));
-    wybuch = loadImage("wybuch.png");
+    
     wybuchAnimacja[0] =(wybuch.get(0, 0, 64, 64));
     wybuchAnimacja[1] =(wybuch.get(64, 0, 64, 64));
     wybuchAnimacja[2] =(wybuch.get(128, 0, 64, 64));
-    pociskGracza = loadImage("graczPocisk.png"); 
-    tlo = loadImage("tlo.png");
-    znaczekHP = loadImage("hpZnaczek.png");
-    licznikHP = loadImage("hpLicznik.png");
-    superstrzelanieObrazek = loadImage("superstrzelanie.png");
-    leczenieObrazek = loadImage("leczenie.png");
-    tarczaObrazek = loadImage("tarcza.png");
+    
+    
     imageMode(CENTER);
     pociski = new ArrayList();
     pociskiW = new ArrayList();

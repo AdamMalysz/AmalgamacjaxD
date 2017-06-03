@@ -47,6 +47,7 @@ class Przycisk {
       break;               //przycisk nowa gra
     case 2: 
       if (myszkaNa)karta=2; 
+      tablicaWynikow = new TablicaWynikow();
       break;              //przycisk rekordy
     case 3: 
       if (myszkaNa)karta=3; 
