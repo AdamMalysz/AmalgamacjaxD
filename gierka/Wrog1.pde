@@ -15,7 +15,7 @@ class Wrog1 extends Wrog {
       wrogX = (int)random(64, 600);
       losB=(int)random(2);
     }
-    if (cooldown==50) {
+    if (cooldown==75) {
       cooldown=0;
       PociskW numerPocisku = new PociskW(wrogX, wrogY);
       pociskiW.add(numerPocisku);

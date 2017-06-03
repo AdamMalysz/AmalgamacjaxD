@@ -5,6 +5,7 @@ class PociskW{
   PociskW(int tx, int ty){   
     x=tx;
     y=ty;
+    strzalWroga.play();
   }
   void rysuj(){
     image(pociskWrog,x,y);

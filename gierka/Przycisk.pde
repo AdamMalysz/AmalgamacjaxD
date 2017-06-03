@@ -39,7 +39,7 @@ class Przycisk {
       myszkaNa=false;
     }
   }
-  void czyWcisnety() {
+  void czyWcisnety() {     
     switch(rodzaj) {
     case 1: 
       if (myszkaNa)karta=1; 

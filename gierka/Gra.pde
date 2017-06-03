@@ -1,5 +1,5 @@
 class Gra {
-  
+
   Gra() {
     String[] lista = (loadStrings("wyniki.txt"));
     for (int i=0; i<=4; i++) {
@@ -8,17 +8,17 @@ class Gra {
     punkty=0;
     tarcza=0;
     maxCooldownBroni=50;
-    
-    
+
+
     statekAnimacja[0] =(statekGracza.get(64, 0, 64, 64));
     statekAnimacja[1] =(statekGracza.get(128, 0, 64, 64));
     statekAnimacja[2] =(statekGracza.get(0, 0, 64, 64));
-    
+
     wybuchAnimacja[0] =(wybuch.get(0, 0, 64, 64));
     wybuchAnimacja[1] =(wybuch.get(64, 0, 64, 64));
     wybuchAnimacja[2] =(wybuch.get(128, 0, 64, 64));
-    
-    
+
+
     imageMode(CENTER);
     pociski = new ArrayList();
     pociskiW = new ArrayList();
@@ -33,13 +33,15 @@ class Gra {
     sprawdzKolizjeZGraczem();
     rysujWybuchy();
     spawnujPowerupy();
+    rysujPociski();
+    przesunPociski();
     if (iloscHP>0) { //zatrzymuje grę po przegranej
       textSize(16); 
       text(punkty+" pkt", 550, 608);
       gracz.rysuj(mouseX, mouseY);
       hp.rysuj();
-      przesunPociski();
-      rysujPociski();
+      
+      
       aktualizujCooldowny();
       sprawdzKolizjeZWrogami();
     } else {    

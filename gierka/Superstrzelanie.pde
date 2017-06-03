@@ -3,12 +3,13 @@ class Superstrzelanie extends Powerup {
     czasTrwania=200;    
     maxCooldownBroni=5;
     zebrany = true;
+    powerupDzwiek.play();
   }
   void aktualizuj() {
-    if (!zebrany && iloscHP>0) {
+    if (!zebrany) {
       image(superstrzelanieObrazek, x, y);
       if (gracz.getKoordyX()>x-32 && gracz.getKoordyX()<x+32 && 
-        gracz.getKoordyY()>y-32 && gracz.getKoordyY()<y+32) {  
+        gracz.getKoordyY()>y-32 && gracz.getKoordyY()<y+32  && iloscHP>0) {  
         kolizja();
       }
     }

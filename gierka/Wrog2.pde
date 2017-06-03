@@ -9,19 +9,17 @@ class Wrog2 extends Wrog {
   void rysuj() {
     image(wrog2, wrogX, wrogY, 64, 64);
     cooldown++;
-    println(wrogX, wrogY, gdzie);
     if (wrogY>672) {
       wrogY = -80;
       wrogX = (int)random(64, 600);
     }
-    if (cooldown==50) {
+    if (cooldown==100) {
       cooldown=0;
       PociskW numerPocisku = new PociskW(wrogX, wrogY);
       pociskiW.add(numerPocisku);
     }
   }
   void idzie() {
-    println(gdzie);
     if (losB==0) {  //tu idzie z prawej
       if (!gdzie&&wrogX<420) {
         wrogX++;

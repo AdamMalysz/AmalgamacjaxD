@@ -5,6 +5,7 @@ class Pocisk{
   Pocisk(int tx, int ty){
     x=tx;
     y=ty;
+    strzalGracza.play();
   }
   void rysuj(){
     image(pociskGracza,x,y);
