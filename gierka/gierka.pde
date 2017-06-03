@@ -1,5 +1,5 @@
-import processing.sound.*;
-SoundFile strzalGracza, wybuchDzwiek, strzalWroga, powerupDzwiek, klikniety, najechany;
+//import processing.sound.*;
+//SoundFile strzalGracza, wybuchDzwiek, strzalWroga, powerupDzwiek, klikniety, najechany;
 
 Menu menu;
 Przycisk nowaGra;
@@ -33,7 +33,7 @@ Tlo tloGra;
 public int karta = 0;
 void setup() {
   ladujObrazy();
-  ladujDzwieki();
+  //ladujDzwieki();
   tloGra = new Tlo(1);
   size(640, 640);
   frameRate(60);
@@ -93,14 +93,14 @@ public void nowaGra() {
   wrog5 = new Wrog5(-640, 10, -640);
   gra = new Gra();
 }
-public void ladujDzwieki(){
+/*public void ladujDzwieki(){
   strzalGracza = new SoundFile(this, "strzalGracza.wav");
   strzalWroga = new SoundFile(this, "strzalWroga.wav");
   wybuchDzwiek = new SoundFile(this, "wybuch.wav");
   powerupDzwiek = new SoundFile(this, "powerup.wav");
   klikniety = new SoundFile(this, "klikniety.wav");
   najechany = new SoundFile(this, "najechany.wav");
-}
+}*/
 public void ladujObrazy(){
   statekGracza = loadImage("gracz.png");
   pociskWrog = loadImage("wrogPocisk.png");

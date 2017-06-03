@@ -1,7 +1,7 @@
 class Leczenie extends Powerup {
   void kolizja() {
     iloscHP+=1;
-    powerupDzwiek.play();
+    //powerupDzwiek.play();
     zebrany = true;
   }
   void aktualizuj() {

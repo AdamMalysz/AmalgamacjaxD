@@ -3,7 +3,7 @@ class SuperTarcza extends Powerup {
     zebrany = true;
     tarcza = 300;
     tarcza = 300;
-    powerupDzwiek.play();
+    //powerupDzwiek.play();
   }
   void aktualizuj() {
     if (!zebrany && iloscHP>0) {

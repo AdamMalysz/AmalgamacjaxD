@@ -5,7 +5,7 @@ class Wybuch {
   Wybuch(int tx, int ty) {
     x=tx;
     y=ty;
-    wybuchDzwiek.play();
+    //wybuchDzwiek.play();
   }
   void rysuj() {
     if (klatkaWybuchu<15) {

@@ -3,7 +3,7 @@ class Superstrzelanie extends Powerup {
     czasTrwania=200;    
     maxCooldownBroni=5;
     zebrany = true;
-    powerupDzwiek.play();
+    //powerupDzwiek.play();
   }
   void aktualizuj() {
     if (!zebrany) {
